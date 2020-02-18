@@ -433,7 +433,7 @@ func (df DataFrame) Mutate(s series.Series) DataFrame {
 	if df.Err != nil {
 		return df
 	}
-	if s.Len() != df.nrows {
+	if s.Len() != df.ncols {
 		return DataFrame{Err: fmt.Errorf("mutate: wrong dimensions")}
 	}
 	df = df.Copy()
